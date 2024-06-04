@@ -2,6 +2,7 @@ const path = require('path');
 const express = require("express");
 const musicRoutes = require('./routes/music');
 const movieRoutes = require('./routes/movie');
+const bookRoutes = require('./routes/book');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 3001;
@@ -19,6 +20,8 @@ app.get("/api", (req, res) => {
 app.use('/music', musicRoutes);
 
 app.use('/movie', movieRoutes);
+
+app.use('/book', bookRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
